@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../layouts/Navbar";
-import FooterButtons from "../../home/FooterButtons";
+
+import InfoSection from "./Whoweare";
 
 const teamMembers = [
   {
@@ -33,21 +32,21 @@ const teamMembers = [
 const About = () => {
   return (
     <>
-      <Navbar />
-      <div className="py-16 px-4">
-        <h2 className="text-center text-6xl md:text-7xl font-bold mb-14 text-[#1c3c6b]" style={{fontFamily: "chathura"}}>
+      {/* <Navbar /> */}
+      <div className="py-16 px-2 mb-10 " id="about-us">
+        <h2 id="meet-the-team" className="text-center text-6xl md:text-7xl font-bold mb-14 text-[#1c3c6b]" style={{fontFamily: "chathura"}}>
           Meet the Sewa team
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10 place-items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10 place-items-center max-w-6xl mx-auto ">
           {teamMembers.map((member, index) => (
-            <Link to={`/about/${member.id}`} key={member.id}>
+            <Link to={`/${member.id}`} key={member.id}>
               <div
                 key={index}
                 className="flex flex-col items-center text-center relative "
               >
                 {/* Box with lined background */}
-                <div className="relative w-80 h-80 bg-[url('/about/icon.png')] bg-contain bg-no-repeat bg-center rounded-md flex items-center justify-center">
+                <div className="relative sm:w-80 sm:h-80 bg-[url('/about/icon.png')] bg-contain bg-no-repeat bg-center rounded-md flex items-center justify-center">
                   {/* Person image floating above background */}
                   <div className="w-46 h-63 shadow-md z-10 transform transition-transform duration-300 ease-in-out hover:scale-105">
                     <img
@@ -75,7 +74,8 @@ const About = () => {
           ))}
         </div>
       </div>
-      <FooterButtons />
+      <InfoSection/>
+      {/* <FooterButtons /> */}
     </>
   );
 };

@@ -52,7 +52,7 @@ const TeamProfile = () => {
         <div className="w-24 md:h-90 overflow-y-scroll pr-2 mt-3 hidden md:block scrollbar-hide">
           <div className="flex flex-col gap-2 items-center sticky ">
             {teamMembers.map((team) => (
-              <Link to={`/about/${team.id}`} key={team.id}>
+              <Link to={`/${team.id}`} key={team.id}>
                 <img
                   src={team.image}
                   alt={team.name}

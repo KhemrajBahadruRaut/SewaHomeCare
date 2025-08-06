@@ -1,13 +1,10 @@
-import React from "react";
-import Navbar from "../../layouts/Navbar";
-import FooterButtons from "../../home/FooterButtons";
+
 import AddressSection from "./AddressSection";
 
 const ContactForm = () => {
   return (
     <>
-      <Navbar />
-      <h2 className="text-7xl!  text-center font-bold  text-[#3A5674] pt-5" style={{ fontFamily: 'Chathura'}}>
+      <h2 id="contact-us" className="text-7xl!  text-center font-bold  text-[#3A5674] pt-5" style={{ fontFamily: 'Chathura'}}>
         Get in Touch
       </h2>
       <div className=" flex items-center justify-center px-4 py-12 bg-white">
@@ -71,7 +68,6 @@ const ContactForm = () => {
         </div>
       </div>
         <AddressSection />
-      <FooterButtons />
     </>
   );
 };

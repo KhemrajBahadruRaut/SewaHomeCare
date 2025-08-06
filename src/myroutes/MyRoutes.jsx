@@ -6,23 +6,28 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 // import Home from '../components/home/Home'
 import Homepage from '../components/home/Homepage'
-import ContactForm from '../components/pages/contactform/ContactForm'
-import Services from '../components/pages/services/services'
-import About from '../components/pages/about/AboutUs'
+// import ContactForm from '../components/pages/contactform/ContactForm'
+// import Services from '../components/pages/services/services'
+// import About from '../components/pages/about/AboutUs'
 import TeamProfile from '../components/pages/about/TeamProfile'
-
+// import Banners from '../components/pages/banners/Banners'
+import MainJoinsection from '../components/pages/whyjoinus/MainJoinsection'
 const MyRoutes = () => {
   return (
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Homepage/>} />
-        <Route path="/contact" element={<ContactForm />} />
-        <Route path="/services" element={<Services />} />
+        {/* <Route path="/contact" element={<ContactForm />} /> */}
+        {/* <Route path="/services" element={<Services />} /> */}
         
         {/* this is about section and sub section that contains team member details */}
-            <Route path="/about" element={<About />} />
-             <Route path="/about/:id" element={<TeamProfile />} />
-        
+
+             <Route path="/:id" element={<TeamProfile />} />
+
+        <Route path='/join-us' element={<MainJoinsection/>}/>
+
+
+
     </Routes>
     </BrowserRouter>
   )

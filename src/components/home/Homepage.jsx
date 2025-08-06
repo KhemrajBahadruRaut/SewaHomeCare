@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../layouts/Navbar";
 import MainContent from "./MainContent";
 import FooterButtons from "./FooterButtons";
-// import FooterButtons from "./FooterButtton"; // double 't' if your file is named like that
+import About from "../pages/about/AboutUs";
+import Services from "../pages/services/services";
+import MainJoinsection from "../pages/whyjoinus/MainJoinsection";
+import Banners from "../pages/banners/Banners";
+import ContactForm from "../pages/contactform/ContactForm";
 
 export default function Homepage() {
   const [typedText, setTypedText] = useState("");
@@ -75,24 +79,45 @@ export default function Homepage() {
   }, [hoverTimeout]);
 
   return (
+    <>
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-          <source src="/main-bg/mainbg.mp4" />
-        </video>
-      </div>
-      <Navbar
-      
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-        activeMenu={activeMenu}
-        handleMenuEnter={handleMenuEnter}
-        handleMenuLeave={handleMenuLeave}
-        openSubmenu={openSubmenu}
-        toggleSubmenu={toggleSubmenu}
-      />
-      <MainContent typedText={typedText} typedText2={typedText2} />
-      <FooterButtons />
-    </div>
+  {/* Background Video Wrapper */}
+  <div className="absolute inset-0 z-0 h-full ">
+    <video
+      className="w-full h-full object-cover"
+      autoPlay
+      muted
+      loop
+      playsInline
+    >
+      <source src="/main-bg/mainbg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  {/* Foreground Content */}
+  <div className="relative z-10">
+    <Navbar
+      isMobileMenuOpen={isMobileMenuOpen}
+      setIsMobileMenuOpen={setIsMobileMenuOpen}
+      activeMenu={activeMenu}
+      handleMenuEnter={handleMenuEnter}
+      handleMenuLeave={handleMenuLeave}
+      openSubmenu={openSubmenu}
+      toggleSubmenu={toggleSubmenu}
+    />
+    <MainContent typedText={typedText} typedText2={typedText2} />
+  </div>
+</div>
+
+   <About/>
+  <Services/>
+  <MainJoinsection/>
+  <Banners/>
+   <ContactForm/>
+
+   
+   <FooterButtons />
+    </>
   );
 }

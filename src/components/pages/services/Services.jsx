@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import Navbar from "../../layouts/Navbar";
+// import Navbar from "../../layouts/Navbar";
 
 const Services = () => {
   const [hoveredService, setHoveredService] = useState(null);
@@ -13,14 +13,20 @@ const Services = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="min-h-screen py-12 px-4">
+      {/* <Navbar /> */}
+      <div className="py-12 px-4 " id="our-services">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-7xl font-bold text-center text-gray-600 mb-12" style={{ fontFamily: 'Chathura'}}  >
+          <h1
+            className="text-7xl font-bold text-center text-gray-600 mb-12"
+            style={{ fontFamily: "Chathura" }}
+          >
             Our Services
           </h1>
 
-          <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto " style={{ fontFamily: 'outfit'}}>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto px-4"
+            style={{ fontFamily: "outfit" }}
+          >
             {/* Service 1 */}
             <div
               onMouseEnter={() => handleHover(1)}
@@ -33,7 +39,7 @@ const Services = () => {
                   image: "/images/home-care.jpg",
                 })
               }
-              className={`relative top-30 row-start-1 col-start-1 transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`relative lg:top-30 transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 1 ? "transform scale-105 z-10" : ""
               }`}
             >
@@ -43,7 +49,7 @@ const Services = () => {
                 onMouseLeave={() => setHoveredService(null)}
               >
                 <div>
-                  <h3 className=" text-xl mb-2">
+                  <h3 className="text-xl mb-2">
                     Comprehensive Home Care Solutions
                   </h3>
                   <div
@@ -75,11 +81,11 @@ const Services = () => {
                   image: "/images/care-managers.jpg",
                 })
               }
-              className={`relative row-start-1 col-start-2 transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`relative transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 2 ? "transform scale-105 z-10" : ""
               }`}
             >
-              <div className="bg-[#67A7DB] rounded-lg p-6 h-55 flex items-center justify-center text-white text-center shadow-lg">
+              <div className="bg-[#67A7DB] rounded-lg p-4 h-60 flex items-center justify-center text-white text-center shadow-lg">
                 <div>
                   <h3 className="text-xl mb-2">
                     Nursing Visits & Health Monitoring
@@ -92,7 +98,8 @@ const Services = () => {
                     }`}
                   >
                     <p className="text-sm leading-relaxed">
-                      On-demand nursing visits and chronic condition care to ensure health needs are expertly met at home.{" "}
+                      On-demand nursing visits and chronic condition care to
+                      ensure health needs are expertly met at home.{" "}
                     </p>
                   </div>
                 </div>
@@ -111,15 +118,13 @@ const Services = () => {
                   image: "/images/geriatric.jpg",
                 })
               }
-              className={`relative top-30 row-start-1 col-start-3 transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`relative lg:top-30 transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 3 ? "transform scale-105 z-10" : ""
               }`}
             >
               <div className="bg-[#376082] rounded-lg p-6 h-55 flex items-center justify-center text-white text-center shadow-lg">
                 <div>
-                  <h3 className=" text-xl mb-2">
-                    Complete Geriatric Support
-                  </h3>
+                  <h3 className="text-xl mb-2">Complete Geriatric Support</h3>
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       hoveredService === 3
@@ -128,7 +133,8 @@ const Services = () => {
                     }`}
                   >
                     <p className="text-sm leading-relaxed">
-                      Holistic geriatric care management to guide aging with assessment, coordination, and family support.{" "}
+                      Holistic geriatric care management to guide aging with
+                      assessment, coordination, and family support.{" "}
                     </p>
                   </div>
                 </div>
@@ -147,13 +153,13 @@ const Services = () => {
                   image: "/images/nursing.jpg",
                 })
               }
-              className={`relative row-start-2 top-30 col-start-1 transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`relative lg:top-30 transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 4 ? "transform scale-105 z-10" : ""
               }`}
             >
               <div className="bg-[#67A7DB] rounded-lg p-6 h-55 flex items-center justify-center text-white text-center shadow-lg">
                 <div>
-                  <h3 className=" text-xl mb-2">
+                  <h3 className="text-xl mb-2">
                     Technology-Enabled Peace of Mind
                   </h3>
                   <div
@@ -164,7 +170,8 @@ const Services = () => {
                     }`}
                   >
                     <p className="text-sm leading-relaxed">
-                      Advanced care technology keeps families connected and informed at every step.{" "}
+                      Advanced care technology keeps families connected and
+                      informed at every step.{" "}
                     </p>
                   </div>
                 </div>
@@ -174,16 +181,16 @@ const Services = () => {
             {/* Service 5 */}
             <div
               onMouseEnter={() => handleHover(5)}
-              onMouseLeave={handleLeave}
-              onClick={() =>
-                openModal({
-                  title: "Experienced Care Manages Oversight on all Services",
-                  description:
-                    "Sewa Home Care, led by experienced RNs brings professional oversight into your home. Our team's extensive healthcare background ensures top-notch care management, offering specialized nursing visits, chronic condition management, and health monitoring. This ensures a highly personalized and professional approach to home care. Every care plan is meticulously crafted and managed, offering peace of mind that you or your loved ones truly deserve.",
-                  image: "/images/mobility.jpg",
-                })
-              }
-              className={`relative row-start-2 col-start-2 transition-all duration-300 ease-in-out cursor-pointer ${
+                onMouseLeave={handleLeave}
+                onClick={() =>
+                  openModal({
+                    title: "Experienced Care Manages Oversight on all Services",
+                    description:
+                      "Sewa Home Care, led by experienced RNs brings professional oversight into your home. Our team's extensive healthcare background ensures top-notch care management, offering specialized nursing visits, chronic condition management, and health monitoring. This ensures a highly personalized and professional approach to home care. Every care plan is meticulously crafted and managed, offering peace of mind that you or your loved ones truly deserve.",
+                    image: "/images/mobility.jpg",
+                  })
+                }
+              className={`relative transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 5 ? "transform scale-105 z-10" : ""
               }`}
             >
@@ -200,7 +207,9 @@ const Services = () => {
                     }`}
                   >
                     <p className="text-sm leading-relaxed">
-                      Led by experienced RNs, we deliver professional care management and health monitoring for complete peace of mind.{" "}
+                      Led by experienced RNs, we deliver professional care
+                      management and health monitoring for complete peace of
+                      mind.{" "}
                     </p>
                   </div>
                 </div>
@@ -219,13 +228,13 @@ const Services = () => {
                   image: "/images/technology.jpg",
                 })
               }
-              className={`relative row-start-2 top-30 col-start-3 transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`relative lg:top-30 transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 6 ? "transform scale-105 z-10" : ""
               }`}
             >
               <div className="bg-[#67A7DB] rounded-lg p-6 h-55 flex items-center justify-center text-white text-center shadow-lg">
                 <div>
-                  <h3 className=" text-xl mb-2">
+                  <h3 className="text-xl mb-2">
                     Flexible, Customer Care Plans
                   </h3>
                   <div
@@ -236,7 +245,8 @@ const Services = () => {
                     }`}
                   >
                     <p className="text-sm leading-relaxed">
-                      Tailored care plans that evolve to fit each client’s unique needs and preferences.{" "}
+                      Tailored care plans that evolve to fit each client's
+                      unique needs and preferences.{" "}
                     </p>
                   </div>
                 </div>
@@ -255,15 +265,13 @@ const Services = () => {
                   image: "/images/flexible.jpg",
                 })
               }
-              className={`relative row-start-3 col-start-2 transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`relative md:col-span-2 lg:col-span-1 lg:left-74 transition-all duration-300 ease-in-out cursor-pointer ${
                 hoveredService === 7 ? "transform scale-105 z-10" : ""
               }`}
             >
               <div className="bg-[#67A7DB] rounded-lg p-6 h-55 flex items-center justify-center text-white text-center shadow-lg">
                 <div>
-                  <h3 className="text-xl mb-2">
-                    Mobility and Independence
-                  </h3>
+                  <h3 className="text-xl mb-2">Mobility and Independence</h3>
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       hoveredService === 7
@@ -272,7 +280,8 @@ const Services = () => {
                     }`}
                   >
                     <p className="text-sm leading-relaxed">
-                      Transportation services help clients stay active and independent in their communities.
+                      Transportation services help clients stay active and
+                      independent in their communities.
                     </p>
                   </div>
                 </div>
@@ -287,7 +296,10 @@ const Services = () => {
             <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
-                  <h2 className="text-2xl font-bold text-gray-800 pr-8" style={{ fontFamily: 'Chathura'}}>
+                  <h2
+                    className="text-2xl font-bold text-gray-800 pr-8"
+                    style={{ fontFamily: "Chathura" }}
+                  >
                     Our Services
                   </h2>
                   <button
