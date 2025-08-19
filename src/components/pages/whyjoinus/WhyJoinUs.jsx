@@ -96,7 +96,7 @@ const WhyJoinUs = () => {
           return nextCard;
         });
       }
-    }, 4000);
+    }, 2500);
 
     if (currentCard === 0 && visibleCards === 0) {
       setVisibleCards(1);

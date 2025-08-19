@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 // Airline data with actual logos
 const airlines = [
   { name: "Emirates", src: "partners/Alignable.png" },
@@ -121,7 +120,7 @@ const Banners = () => {
         </p>
 
         {/* First row */}
-        <div className="flex flex-col md:flex-row justify-center flex-wrap  md:space-x-30">
+        {/* <div className="flex flex-col md:flex-row justify-center flex-wrap  md:space-x-30 border">
           <div
             className="flex-1 flex flex-col items-center md:items-end justify-end text-end p-4 font-bold text-[42px] md:text-[45px] lg:text-[60px]"
             style={{ fontFamily: "chathura" }}
@@ -136,18 +135,26 @@ const Banners = () => {
               className="w-full max-w-[300px] object-contain"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Second row */}
-        <div className="flex flex-col md:flex-row justify-center flex-wrap md:space-x-20">
-          <div className="flex-1 flex items-center justify-center md:justify-end p-4">
+
+        <div className="flex flex-col md:flex-row justify-center flex-wrap  ">
+          <div className="flex-1 flex items-center justify-center p-4 ">
+            <img
+              src="/partners/recognition/image4.png"
+              alt=""
+              className="w-full max-w-[300px] object-contain"
+            />
+          </div>
+          <div className="flex-1 flex items-center justify-center p-4 ">
             <img
               src="/partners/recognition/image2.png"
               alt=""
               className="w-full max-w-[300px] object-contain"
             />
           </div>
-          <div className="flex-1 flex items-center justify-center md:justify-start p-4">
+          <div className="flex-1 flex items-center justify-center  p-4">
             <img
               src="/partners/recognition/image3.png"
               alt=""

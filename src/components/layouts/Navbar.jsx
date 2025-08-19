@@ -76,6 +76,12 @@ const Navbar = () => {
       ],
       wide: true,
     },
+     {
+      title: "TESTIMONIALS",
+      id: "testimonials",
+      items: [""],
+      wide: false,
+    },
     {
       title: "VIEW REVIEWS",
       id: "join-our-team",
@@ -261,7 +267,7 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <div className="flex items-center justify-end pt-4">
               {/* Main Menu Items */}
-              <div className="flex space-x-25">
+              <div className="flex space-x-8">
                 {menuItems.map((item) => (
                   <div
                     key={item.title}
