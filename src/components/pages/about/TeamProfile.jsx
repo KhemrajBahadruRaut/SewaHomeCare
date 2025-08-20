@@ -68,23 +68,23 @@ const TeamProfile = () => {
         {/* Right: Main content */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left - Image */}
-          <div className="relative w-full flex justify-center">
-            <div className="relative w-130 h-130 bg-[url('/about/icon.png')] bg-contain bg-no-repeat bg-center flex items-center justify-center">
+          <div className="relative w-full flex justify-center ">
+            <div className="relative w-75 h-90 bg-[url('/about/icon.png')] bg-[#EBEBEB] bg-contain bg-no-repeat bg-center flex items-center justify-center">
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-60 h-80 absolute  top-[60px] object-cover border-4shadow-lg z-10"
+                className="w-70 h-80 absolute  top-[32px] object-cover border-4shadow-lg z-10"
               />
-              <div className="absolute z-100 right-30 bg-white rounded-l-[22px] space-y-1 top-75 px-4 py-2 shadow text-left ">
-                <h3 className="text-sm font-semibold text-[#1c3c6b] uppercase">
+              <div className="absolute z-100 right-0 bg-[#EBEBEB] rounded-l-[22px] space-y-1 top-68 px-4 py-2 shadow text-left ">
+                <h3 className="text-[12px] bg-[#EBEBEB]font-semibold text-[#1c3c6b] uppercase">
                   {member.name}
                 </h3>
-                <p className="text-xs text-[#1990ff] font-medium uppercase">
+                <p className="text-[10px] text-[#1990ff] font-medium uppercase">
                   {member.role}
                 </p>
               </div>
             </div>
-            <button className="absolute top-94 z-100 mt-4 border-2 bg-white border-[#1990ff] text-[#1990ff] px-10 py-1 rounded-full text-sm hover:bg-[#1990ff] hover:text-white transition">
+            <button className="absolute top-91 z-100 border-2 bg-white border-[#1990ff] text-[#1990ff] px-10 py-1 rounded-full text-sm hover:bg-[#1990ff] hover:text-white transition">
               Talk to me
             </button>
           </div>

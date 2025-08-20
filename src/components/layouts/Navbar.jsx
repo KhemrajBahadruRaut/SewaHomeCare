@@ -1,5 +1,6 @@
 import { Search, Menu, X, ChevronDown, ChevronUp, Link } from "lucide-react";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const serviceData = {
@@ -57,7 +58,7 @@ const Navbar = () => {
   // Menu data
   const menuItems = [
     {
-      title: "ABOUT US",
+      title: "ABOUT US ",
       id: "about-us",
       items: ["MEET THE TEAM", "WHO WE ARE"],
       wide: false,
@@ -79,7 +80,7 @@ const Navbar = () => {
      {
       title: "TESTIMONIALS",
       id: "testimonials",
-      items: [""],
+      items: [],
       wide: false,
     },
     {
@@ -167,6 +168,21 @@ const Navbar = () => {
     setSelectedService(null);
   };
 
+  // for redirect if the user is in the home page or in the other page
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLogoClick = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    
+    if (location.pathname === '/home') {
+      navigate('/'); // If on /home, go to root
+    } else {
+      navigate('/home'); // Otherwise, go to /home
+    }
+  };
+
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-white/30 shadow-sm">
@@ -176,11 +192,12 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo Section */}
             <div className="flex items-center">
-              <a href="/">
+              <a href="/home">
                 <img
                   src="/main-logo/logo.png"
                   alt=""
                   className="h-10 lg:relative lg:top-7 lg:h-30"
+                  onClick={handleLogoClick}
                 />
               </a>
             </div>
@@ -268,7 +285,7 @@ const Navbar = () => {
             <div className="flex items-center justify-end pt-4">
               {/* Main Menu Items */}
               <div className="flex space-x-8">
-                {menuItems.map((item) => (
+                {menuItems.map((item,idx) => (
                   <div
                     key={item.title}
                     className="relative"
@@ -277,8 +294,8 @@ const Navbar = () => {
                   >
                     <a
                       onClick={() => handleScrollTo(item.id)}
-                      className="text-gray-700 text-[18px] hover:text-blue-600 font-medium py-2 transition-colors duration-200 tracking-wider cursor-pointer"
-                      style={{ fontFamily: "macha" }}
+                      className="text-black text-[14px] hover:text-blue-600 py-2 transition-colors duration-200 tracking-wider cursor-pointer"
+                      style={{ fontFamily: "century" }}
                     >
                       {item.title}
                     </a>
@@ -326,8 +343,8 @@ const Navbar = () => {
                 onMouseLeave={handleMenuLeave}
               >
                 <button
-                  className="text-gray-700 hover:text-blue-600 font-medium py-2 mr-8 flex items-center transition-colors duration-200 tracking-wider"
-                  style={{ fontFamily: "macha" }}
+                  className="text-gray-700 hover:text-blue-600 font-semibold text-[14px] py-2 mr-8 flex items-center transition-colors duration-200 tracking-wider"
+                  style={{ fontFamily: "century" }}
                 >
                   MENU
                 </button>

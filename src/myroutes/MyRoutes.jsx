@@ -12,13 +12,15 @@ import Homepage from '../components/home/Homepage'
 import TeamProfile from '../components/pages/about/TeamProfile'
 // import Banners from '../components/pages/banners/Banners'
 import MainJoinsection from '../components/pages/whyjoinus/MainJoinsection'
-import CareSection from '../components/pages/about/care/Caresection'
+// import CareSection from '../components/pages/about/care/Caresection'
+import MainHomePage from '../components/home/MainHomePage'
 const MyRoutes = () => {
   return (
     <BrowserRouter>
     <Routes>
-        <Route path="/" element={<Homepage/>} />
-        {/* <Route path="/contact" element={<ContactForm />} /> */}
+        <Route path="/home" element={<Homepage/>} />
+        <Route path="/" element={<MainHomePage/>} />
+          {/* <Route path="/contact" element={<ContactForm />} /> */}
         {/* <Route path="/services" element={<Services />} /> */}
         
         {/* this is about section and sub section that contains team member details */}
@@ -26,7 +28,7 @@ const MyRoutes = () => {
              <Route path="/:id" element={<TeamProfile />} />
 
         <Route path='/join-us' element={<MainJoinsection/>}/>
-        <Route path='/care' element={<CareSection/>}/>
+        {/* <Route path='/care' element={<CareSection/>}/> */}
 
 
 
