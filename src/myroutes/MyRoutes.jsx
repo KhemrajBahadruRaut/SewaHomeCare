@@ -14,6 +14,7 @@ import TeamProfile from '../components/pages/about/TeamProfile'
 import MainJoinsection from '../components/pages/whyjoinus/MainJoinsection'
 // import CareSection from '../components/pages/about/care/Caresection'
 import MainHomePage from '../components/home/MainHomePage'
+import Test from '../components/layouts/test'
 const MyRoutes = () => {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ const MyRoutes = () => {
 
         <Route path='/join-us' element={<MainJoinsection/>}/>
         {/* <Route path='/care' element={<CareSection/>}/> */}
+        <Route path='/test' element={<Test/>}/>
 
 
 
