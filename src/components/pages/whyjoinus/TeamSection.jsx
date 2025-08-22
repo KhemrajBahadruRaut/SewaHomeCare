@@ -10,7 +10,7 @@ const TeamSection = () => {
         <div className="flex flex-col lg:flex-row">
           
           {/* Left Section - Image */}
-          <div className="lg:w-1/2 relative flex items-center justify-center sm:p-8 z-100 mt-10">
+          <div className="lg:w-1/2 relative flex items-center justify-center sm:p-8 mt-10 z-[1]">
            <img src="/join/join.png" alt="" />
           </div>
           

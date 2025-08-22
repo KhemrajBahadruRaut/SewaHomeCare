@@ -13,19 +13,7 @@ const DesktopMenuItem = ({
   handleMenuLeave,
   handleScrollTo
 }) => {
-  // Function to calculate dropdown position
-  const getDropdownPosition = () => {
-    if (dropdownType === "menu") {
-      return {
-        left: '50%',
-        transform: 'translateX(-50%)'
-      };
-    }
-    return {
-      left: '50%',
-      transform: 'translateX(-50%)'
-    };
-  };
+
   const renderDropdownContent = () => {
     switch (dropdownType) {
       case "services":
@@ -55,25 +43,30 @@ const DesktopMenuItem = ({
   };
 
   return (
+
+    // yo chai navbar maa dekheako items haru about, out services, testimonials, view reviews haru
     <div
       className="relative"
       onMouseEnter={() => handleMenuEnter(title)}
       onMouseLeave={handleMenuLeave}
     >
-      <a
-        onClick={() => handleScrollTo(id)}
-        className="text-black text-[14px] hover:text-blue-600 py-2 transition-colors duration-200 tracking-wider cursor-pointer"
-        style={{ fontFamily: "century" }}
-      >
-        {title}
-      </a>
+      <div className="flex items-center">
+        <a
+          onClick={() => handleScrollTo(id)}
+          className="text-black text-[14px]  hover:text-blue-600 py-2 transition-colors duration-200 tracking-wider cursor-pointer"
+          style={{ fontFamily: "century" }}
+        >
+          {title}
+        </a>
+      </div>
+        
 
       {items.length > 0 && (
         <div 
-          className={`fixed top-[112px] left-0 w-screen bg-white shadow-xl border-t border-gray-300 z-[100] transition-all duration-300 ease-in-out ${
+          className={`fixed top-[116px] left-0 w-screen bg-white shadow-xl border-t border-gray-300 z-[100] transition-all duration-300 ease-in-out ${
             activeMenu === title 
               ? 'opacity-100 translate-y-0 visible' 
-              : 'opacity-0 -translate-y-4 invisible'
+              : 'opacity-0 invisible'
           }`}
           style={{
             left: '50%',

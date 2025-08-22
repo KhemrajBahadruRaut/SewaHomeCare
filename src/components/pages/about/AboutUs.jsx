@@ -48,7 +48,7 @@ const About = () => {
                 {/* Box with lined background */}
                 <div className="relative sm:w-54 sm:h-63 bg-[url('/about/icon.png')] bg-contain bg-no-repeat bg-center rounded-md flex items-center justify-center">
                   {/* Person image floating above background */}
-                  <div className="w-48 h-63  z-10  transform transition-transform  duration-300 ease-in-out hover:scale-105">
+                  <div className="w-48 h-63    transform transition-transform  duration-300 ease-in-out hover:scale-105">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -56,7 +56,7 @@ const About = () => {
                     />
                   </div>
                 </div>
-                <div className=" absolute top-50 right-[1px] z-100 py-[2px] bg-[#EBEBEB] rounded-l-[22px] pl-4 pr-4">
+                <div className=" absolute top-50 right-[1px] py-[2px] bg-[#EBEBEB] rounded-l-[22px] pl-4 pr-4">
                   <h3 className="text-[10px] font-semibold text-[#1c3c6b] uppercase tracking-wide">
                     {member.name}
                   </h3>
@@ -66,7 +66,7 @@ const About = () => {
                   </p>
                 </div>
 
-                <button className=" absolute top-65   bg-[#EBEBEB] z-100 mt-1 px-16 py-1 border border-[#1990ff] text-[#1990ff] hover:rounded-tr-[10px] hover:rounded-bl-[10px]  text-sm hover:bg-[#1990ff] hover:text-white transition">
+                <button className=" absolute top-65   bg-[#EBEBEB]  mt-1 px-16 py-1 border border-[#1990ff] text-[#1990ff] hover:rounded-tr-[10px] hover:rounded-bl-[10px]  text-sm hover:bg-[#1990ff] hover:text-white transition">
                   TALK TO ME
                 </button>
               </div>

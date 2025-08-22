@@ -115,7 +115,7 @@ const WhyJoinUs = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center ">
         <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row bg-white lg:h-[34rem]">
           {/* Left Section - Title */}
           <div className="flex-1 flex items-center justify-center p-6 md:p-8 lg:p-12 text-center">
@@ -125,10 +125,10 @@ const WhyJoinUs = () => {
           </div>
 
           {/* Right Section - Animated Cards */}
-          <div className="flex-1 mt-15 mb-15 sm:mt-0 sm:mb-0 relative min-h-[20rem] w-40 top-35 lg:top-0 sm:min-h-[25rem] md:min-h-[30rem] lg:min-h-full mx-auto">
+          <div className="flex-1 mt-15 mb-15 sm:mt-0 sm:mb-0 relative min-h-[20rem] w-40 top-35 lg:top-0 sm:min-h-[25rem] md:min-h-[30rem] lg:min-h-full mx-auto z-[1]">
             <div className=" hidden lg:flex">
               {/* preventing mouse hover affect */}
-              <div className="absolute h-80  w-120 top-96 left-15 z-20 "></div>
+              <div className="absolute h-100 left-10 z-100 w-127 top-96 "></div>
             </div>
             <div className="relative h-full">
               {cards.map((card, index) => {
@@ -159,10 +159,10 @@ const WhyJoinUs = () => {
                           ? 0
                           : 0,
                         zIndex: isActive
-                          ? 10
+                          ? 1
                           : isPrevious && hoveredCard === null
-                          ? 9
-                          : 1,
+                          ? 0
+                          : -1,
                       }}
                       onMouseEnter={() => {
                         setHoveredCard(index);

@@ -86,9 +86,18 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="relative overflow-hidden">
+       <Navbar
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            activeMenu={activeMenu}
+            handleMenuEnter={handleMenuEnter}
+            handleMenuLeave={handleMenuLeave}
+            openSubmenu={openSubmenu}
+            toggleSubmenu={toggleSubmenu}
+          />
+      <div className="relative overflow-hidden mt-16 lg:mt-29">
         {/* Background Video Wrapper */}
-        <div className="absolute inset-0 z-0 h-full ">
+        <div className="absolute inset-0 z-0 h-full">
           <video
             className="w-full h-full object-cover"
             autoPlay
@@ -103,15 +112,6 @@ export default function Homepage() {
 
         {/* Foreground Content */}
         <div className="relative z-10">
-          <Navbar
-            isMobileMenuOpen={isMobileMenuOpen}
-            setIsMobileMenuOpen={setIsMobileMenuOpen}
-            activeMenu={activeMenu}
-            handleMenuEnter={handleMenuEnter}
-            handleMenuLeave={handleMenuLeave}
-            openSubmenu={openSubmenu}
-            toggleSubmenu={toggleSubmenu}
-          />
           <MainContent typedText={typedText} typedText2={typedText2} />
         </div>
       </div>
